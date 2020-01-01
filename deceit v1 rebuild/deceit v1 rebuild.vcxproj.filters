@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\sdk">
+      <UniqueIdentifier>{d13a504a-6f77-4da5-8ccc-5d06d2fe34d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{95c1ffa5-44d8-4553-9397-22bc2b0a3dea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\hook">
+      <UniqueIdentifier>{ca933c3b-51c2-4db0-a4a3-69eb937d8e28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MinHook">
+      <UniqueIdentifier>{8d67a52c-4dba-41af-94b5-aac54e30f0aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MinHook\include">
+      <UniqueIdentifier>{de8042f2-1f7a-4bdf-874d-c66cbef5037b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="d3d_render">
+      <UniqueIdentifier>{80926b10-0290-45a0-8462-8675195ebff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\feature">
+      <UniqueIdentifier>{9c8c68e5-941e-4f6c-bd1e-e25c7784579d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sdk\math">
+      <UniqueIdentifier>{20224387-bb12-40e1-b6b9-49a7c20bf45e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\class.cpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="hook\hook.cpp">
+      <Filter>Header Files\hook</Filter>
+    </ClCompile>
+    <ClCompile Include="d3d_render\renderer.cpp">
+      <Filter>d3d_render</Filter>
+    </ClCompile>
+    <ClCompile Include="feature\esp.cpp">
+      <Filter>Header Files\feature</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\math\math.cpp">
+      <Filter>Header Files\sdk\math</Filter>
+    </ClCompile>
+    <ClCompile Include="feature\misc.cpp">
+      <Filter>Header Files\feature</Filter>
+    </ClCompile>
+    <ClCompile Include="feature\global_var.cpp">
+      <Filter>Header Files\feature</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\vtable_hook.cpp">
+      <Filter>Header Files\utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="utils\vfunction.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\class.h">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\math\math.h">
+      <Filter>Header Files\sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="hook\hook.h">
+      <Filter>Header Files\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\include\MinHook.h">
+      <Filter>Header Files\MinHook\include</Filter>
+    </ClInclude>
+    <ClInclude Include="d3d_render\render.hpp">
+      <Filter>d3d_render</Filter>
+    </ClInclude>
+    <ClInclude Include="d3d_render\shader.h">
+      <Filter>d3d_render</Filter>
+    </ClInclude>
+    <ClInclude Include="feature\esp.h">
+      <Filter>Header Files\feature</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\math\matrix33.h">
+      <Filter>Header Files\sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="feature\misc.h">
+      <Filter>Header Files\feature</Filter>
+    </ClInclude>
+    <ClInclude Include="feature\global_var.h">
+      <Filter>Header Files\feature</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\UtlVector.h">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\UtlMemory.h">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\vtable_hook.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
