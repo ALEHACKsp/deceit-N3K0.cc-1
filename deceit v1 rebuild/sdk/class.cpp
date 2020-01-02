@@ -117,7 +117,28 @@ f5 then is should look like
 		(__int64 *)va);
 ps. some of string in sdk might not show in releasse build if it doesn't show try another one
 */
- 
+#define SetPos_offset   0xC50350
+
+// I'm sorry for not use actual vtable I just found it from reverse ScriptBind_Entity::SetLocalPos function
+// find string SetLocalPos look a bit up grab the first function you see lea,sub_0func_offset go in to sub_0func_offset function
+	/*
+ sub_0func_offset
+.text:0000000140C28450
+.text:0000000140C28450                 mov     [rsp+arg_0], rbx
+.text:0000000140C28455                 push    rdi
+.text:0000000140C28456                 sub     rsp, 30h
+.text:0000000140C2845A                 mov     rdi, r8
+.text:0000000140C2845D                 mov     rbx, rdx
+.text:0000000140C28460                 call    GetEntity
+.text:0000000140C28465                 test    rax, rax
+.text:0000000140C28468                 jz      short loc_140C28480
+.text:0000000140C2846A                 xor     r9d, r9d
+.text:0000000140C2846D                 mov     [rsp+38h+var_18], 0
+.text:0000000140C28472                 xor     r8d, r8d
+.text:0000000140C28475                 mov     rdx, rdi
+.text:0000000140C28478                 mov     rcx, rax
+.text:0000000140C2847B                 call    SetPos_0 <-- this is SetPos function
+	 */
  bool sdk::Initialize(bool dump) {
 	 static DWORD64 game_base = reinterpret_cast<DWORD64>(GetModuleHandleA(0));
 	 sdk::global_var::pRender        = reinterpret_cast<IRender*>        (*(DWORD64*)(game_base + pRender_offset));
@@ -172,26 +193,8 @@ ps. some of string in sdk might not show in releasse build if it doesn't show tr
  }
 
  void IEntity::set_position(Vector pos) {
-	 ((void(__fastcall*)(IEntity*, Vector*, int))((DWORD64)(GetModuleHandleA(0)) + 0xC50350))(this, &pos, 0);
-	 // I'm sorry for not use actual vtable I just found it from reverse ScriptBind_Entity::SetLocalPos function
-	 // find string SetLocalPos look a bit up grab the first function you see 
-	 /*
-.text:0000000140C28450
-.text:0000000140C28450                 mov     [rsp+arg_0], rbx
-.text:0000000140C28455                 push    rdi
-.text:0000000140C28456                 sub     rsp, 30h
-.text:0000000140C2845A                 mov     rdi, r8
-.text:0000000140C2845D                 mov     rbx, rdx
-.text:0000000140C28460                 call    GetEntity
-.text:0000000140C28465                 test    rax, rax
-.text:0000000140C28468                 jz      short loc_140C28480
-.text:0000000140C2846A                 xor     r9d, r9d
-.text:0000000140C2846D                 mov     [rsp+38h+var_18], 0
-.text:0000000140C28472                 xor     r8d, r8d
-.text:0000000140C28475                 mov     rdx, rdi
-.text:0000000140C28478                 mov     rcx, rax
-.text:0000000140C2847B                 call    SetPos_0 <-- this is SetPos function 
-	 */
+	 ((void(__fastcall*)(IEntity*, Vector*, int))((DWORD64)(GetModuleHandleA(0)) + SetPos_offset))(this, &pos, 0);
+	
  }
 
  
