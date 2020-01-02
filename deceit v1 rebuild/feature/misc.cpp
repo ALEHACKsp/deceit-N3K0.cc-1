@@ -13,7 +13,7 @@ void misc::local_to_player(IEntity* entity, bool save_old_pos) {
 
 	if (tp_key) {
 		should_restore = true;
-		localplayer->set_position(entity->m_position);
+		localplayer->set_local_position(entity->m_position);
 	}
 	else {
 		if (should_restore) {

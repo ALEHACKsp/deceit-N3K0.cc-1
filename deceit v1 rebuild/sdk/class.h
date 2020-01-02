@@ -301,7 +301,9 @@ public:
 	Ang3 get_angle() {
 		return Ang3(quat_to_matrix33(m_rotation));
 	}
-
+	void set_local_position(Vector vPos) {
+		CallVFunction<void(__thiscall*)(void*, Vector*)>(this, 35)(this, &vPos);
+	}
 	Vector get_bone_position(__int64 id);
 	Vector get_bone_position(const char* name = "Bip01 Head");
 	void set_position(Vector pos);
@@ -382,6 +384,7 @@ public:
 	IActorSystem* get_actor_system() {
 		return CallVFunction<IActorSystem * (__thiscall*)(void*)>(this, 22)(this);
 	}
+
 };
 class IInventory {
 public:
