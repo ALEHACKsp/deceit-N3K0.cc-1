@@ -111,4 +111,9 @@
       <Filter>Header Files\utils</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.gitignore">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
