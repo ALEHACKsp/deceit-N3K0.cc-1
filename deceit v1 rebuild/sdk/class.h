@@ -681,7 +681,10 @@ namespace sdk {
 
 }
 
-#define crylog_function_address 0xE9B10
+#define CRYLOG 0
+
+#if CRYLOG == 1
+#define crylog_function_address 0xE9BF0
 /*
 pattern : E8 ? ? ? ? 48 8B 9F ? ? ? ? 8B 74 24 28  + 1
 or see how to find pLog
@@ -692,3 +695,5 @@ void CryLog(const char* format, Args...args) {
 	static auto import = (void(*)(const char*, ...))(((DWORD64)GetModuleHandleA(0) + crylog_function_address));
 	return import(format, args...);
 }
+
+#endif

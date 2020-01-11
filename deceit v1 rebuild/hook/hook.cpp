@@ -335,10 +335,11 @@ DWORD Hook::Hook(HWND hwnd) {
 	VirtualProtect(phookD3D11Present, 2, PAGE_EXECUTE_READWRITE, &old_protect);
 
 
-
+#if CRYLOG == 1
 	CLog.setup(sdk::global_var::pLog);
 	CLog.hook_index(1, plog_log_hook);
 	CryLog("Hewwo AwyBowyHewre");
+#endif
 }
 
 void Hook::UnHook() {
